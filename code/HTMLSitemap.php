@@ -7,7 +7,7 @@ class HTMLSitemap extends Page {
 
 	private static $allowed_children = 'none';
 	private static $description = 'Adds an html sitemap generated from the site tree';
-	private static $icon = 'sitemap/images/sitemap.png';
+	private static $icon_class = 'font-icon-sitemap';
 	
 	private static $db = [];
 
