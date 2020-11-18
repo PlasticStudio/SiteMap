@@ -8,7 +8,10 @@
 		"silverstripe/framework": ">4.0"
 	},
     "extra": {
-        "installer-name": "sortablegridfield"
+        "installer-name": "sortablegridfield",
+		"expose": [
+            "css"
+        ]
     },
 	"minimum-stability": "dev"
 }
