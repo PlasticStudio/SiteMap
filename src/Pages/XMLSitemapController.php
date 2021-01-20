@@ -37,7 +37,7 @@ class XMLSitemap_Controller extends PageController {
 	 * Render with template
 	 **/
 	public function GetXMLValue(){
-		return $this->renderWith('XMLSitemap')->Value;
+		return $this->renderWith('PlasticStudio\Sitemap\Pages\Layout\XMLSitemap')->Value;
 	}
 
 }

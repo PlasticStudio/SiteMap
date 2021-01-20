@@ -4,14 +4,14 @@
 
 		<div class="inner">
 
-				<% if Menu(1) %>
+				<% if Sitemap %>
 					<%-- level 1 --%>
 					<ul>
-					<% loop Menu(1) %>
+					<% loop Sitemap %>
 						<% if not ExcludeFromSitemap %>
 							<li>
 								<a href="$Link" title="<% if MetaKeywords %>$MetaKeywords <% else %> Webdesign Wellington <% end_if %> - {$SiteConfig.Title} - <% if MetaTitle %>$MetaTitle.XML <% else %> $Title.XML <% end_if %>">$MenuTitle.XML</a>
-								<% if Children %>
+								<% if AllChildren %>
 									<% include SitemapNextLevel %>
 								<% end_if %>
 							</li>

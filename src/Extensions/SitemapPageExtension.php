@@ -5,6 +5,7 @@ namespace PlasticStudio\Sitemap\Extensions;
 use SilverStripe\ORM\DataExtension;
 use Silverstripe\Forms\FieldList;
 use Silverstripe\Forms\CheckBoxField;
+use SilverStripe\CMS\Model\SiteTree;
 
 class SitemapPageExtension extends DataExtension {
      
@@ -23,5 +24,10 @@ class SitemapPageExtension extends DataExtension {
 			'ShowInSearch'
 		);
     }
+	
+	public function Sitemap()
+	{
+		return SiteTree::get()->Filter(['ParentID' => 0]);
+	}
 	
 }
