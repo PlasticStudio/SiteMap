@@ -1,5 +1,8 @@
 <?php
 
+namespace PlasticStudio\Sitemap\Pages;
+
+use Page;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\ORM\DB;
 
@@ -8,6 +11,7 @@ class HTMLSitemap extends Page {
 	private static $allowed_children = 'none';
 	private static $description = 'Adds an html sitemap generated from the site tree';
 	private static $icon_class = 'font-icon-sitemap';
+	private static $table_name = 'HTMLSitemap';
 	
 	private static $db = [];
 
@@ -18,7 +22,8 @@ class HTMLSitemap extends Page {
 		'Sort' => 10000
 	];
 
-	public function getCMSFields(){
+	public function getCMSFields()
+	{
 		$fields = parent::getCMSFields();
 		$fields->removeByName('Content');
 		return $fields;
@@ -28,12 +33,13 @@ class HTMLSitemap extends Page {
 	 * Add default record to database
 	 *
 	 */
-	public function requireDefaultRecords() {
+	public function requireDefaultRecords()
+	{
 		parent::requireDefaultRecords();
 		
 		// if html sitemap page does not exist
-		if(static::class == self::class && $this->config()->create_default_pages) {
-			if( !SiteTree::get_by_link('html-sitemap') ){
+		if (static::class == self::class && $this->config()->create_default_pages) {
+			if (!SiteTree::get_by_link('html-sitemap')) {
 				$HTMLSitemap = new HTMLSitemap();
 				$HTMLSitemap->Title = 'HTML Sitemap';
 				$HTMLSitemap->Content = '';
@@ -42,7 +48,6 @@ class HTMLSitemap extends Page {
 				$HTMLSitemap->flushCache();
 				DB::alteration_message('Sitemap HTML page created', 'created');
 			}
-
 		}
 
 		/*
@@ -57,6 +62,5 @@ class HTMLSitemap extends Page {
 			}
 		}*/
 	}
-
 
 }
