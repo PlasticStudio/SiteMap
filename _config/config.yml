@@ -1,3 +1,6 @@
 Page:
   extensions:
     - PlasticStudio\Sitemap\Extensions\SitemapPageExtension
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - PlasticStudio\Sitemap\Extensions\SitemapSiteConfigExtension
