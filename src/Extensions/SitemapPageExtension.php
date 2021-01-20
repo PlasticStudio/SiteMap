@@ -47,9 +47,7 @@ class SitemapPageExtension extends DataExtension {
 	public function ExtraMeta()
 	{
 		$tags = $this->owner->ExtraMeta;
-		if (SiteConfig::current_site_config()->DoNotIndex) {
-            $tags .= '<meta name="robots" content="noindex, nofollow" />';
-        } else if ($this->owner->DoNotIndex) {
+		if (SiteConfig::current_site_config()->DoNotIndex || $this->owner->DoNotIndex) {
             $tags .= '<meta name="robots" content="noindex, nofollow" />';
         }
         return $tags;
