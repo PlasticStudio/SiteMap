@@ -32,3 +32,4 @@ Installation
 3. Pages can be excluded from sitemap using the checkbox in the Settings CMS tab (under Visibility)
 4. Pages can be excluded from being crawled/indexed by bots in the Settings CMS tab (under Visibility)
 5. The entire site can be excluded from being crawled/indexed by bots in Site Settings (under the Indexing tab)
+6. The noindex tag piggy-backs off SiteTree's ExtraMeta attribute, so make sure your page head template includes the `$ExtraMeta` tag.
