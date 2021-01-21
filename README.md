@@ -21,11 +21,14 @@ Features
 * Exclude any page from sitemaps with CMS checkbox (on Settings tab)
 * Uses partial caching, refreshed when any page in the sitetree is updated
 * Creates/updates an actual sitemap.xml file in the root of the site on load of xml sitemap page
+* Adds the ability to prevent a single page or the entire site from being crawled and indexed by (well-behaved) bots
 
 
 Installation
 ============
 
-1. Install module
+1. Install module via composer  `composer require plasticstudio/sitemap`
 2. Run /dev/build?flush=1
 3. Pages can be excluded from sitemap using the checkbox in the Settings CMS tab (under Visibility)
+4. Pages can be excluded from being crawled/indexed by bots in the Settings CMS tab (under Visibility)
+5. The entire site can be excluded from being crawled/indexed by bots in Site Settings (under the Indexing tab)
