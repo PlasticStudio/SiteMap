@@ -19,7 +19,7 @@ class SitemapSiteConfigExtension extends DataExtension {
             CheckBoxField::create(
 				'DoNotIndex', 
 				'Exclude entire site from indexing robots (like Google etc)'
-            )
+            )->setDescription('Checking this box will add a "robots no-index" tag to the head of every page, preventing search engine bots from crawling and indexing this site (assuming those bots are well-behaved and respect the tag)')
         );
     }
 	
