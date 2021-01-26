@@ -3,6 +3,7 @@
 namespace PlasticStudio\Sitemap\Pages;
 
 use PageController;
+use SilverStripe\Control\Director;
 
 class XMLSitemap_Controller extends PageController {
 	
@@ -22,7 +23,12 @@ class XMLSitemap_Controller extends PageController {
 		$xml = $this->GetXMLValue();
 
 		// get link to xml file to be created/updated in site root
-		$file = BASE_PATH . '/sitemap.xml';
+		if (Director::publicDir()) {
+			$base_path = Director::publicFolder();
+		} else {
+			$base_path = Director::baseFolder();
+		}
+		$file = $base_path . '/sitemap.xml';
 		$fp = fopen($file, "w");
 		// prepend xml tag to result (gets excluded from curl)
 		/*$output = '<?xml version="1.0" encoding="UTF-8"?>';
